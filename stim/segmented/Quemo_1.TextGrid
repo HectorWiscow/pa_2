@@ -1,0 +1,35 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 0.44718820861678005 
+tiers? <exists> 
+size = 2 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "first_vowel" 
+        xmin = 0 
+        xmax = 0.44718820861678005 
+        intervals: size = 3 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.08340708547669114 
+            text = "" 
+        intervals [2]:
+            xmin = 0.08340708547669114 
+            xmax = 0.1824446808702296 
+            text = "" 
+        intervals [3]:
+            xmin = 0.1824446808702296 
+            xmax = 0.44718820861678005 
+            text = "" 
+    item [2]:
+        class = "TextTier" 
+        name = "mid_point" 
+        xmin = 0 
+        xmax = 0.44718820861678005 
+        points: size = 1 
+        points [1]:
+            number = 0.13129850484539754 
+            mark = "" 
