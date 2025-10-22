@@ -8,6 +8,18 @@ output: html_document
 ```{r}
 library(tidyverse)
 
-read_csv("./data/data.csv")
+dat <- read.csv("./data/data.csv")
+
+
+dat |> 
+  pivot_longer(
+    cols = durationV:int, 
+    names_to = "metric", 
+    values_to = "val"
+  ) |> 
+  ggplot() + 
+  aes(x = metric, y = val) + 
+  facet_wrap(~ metric, scales = "free_y") + 
+  geom_point()
 ```
 
