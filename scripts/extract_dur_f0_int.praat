@@ -1,6 +1,6 @@
 # Set path to folder where files are
 
-path$ = "C:\Users\Hector\Desktop\pa_2\stim\segmented"
+path$ = "../stim/segmented/"
 
 # Create output file and set header
 sep$ = ","

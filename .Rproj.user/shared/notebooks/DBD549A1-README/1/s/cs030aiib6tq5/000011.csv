@@ -1,0 +1,5 @@
+"0","read_csv(""./data/data.csv"")
+"
+"2","Error in vroom_(file, delim = delim %||% col_types$delim, col_names = col_names,  : 
+  embedded nul in string: 'i\0n\0f\0o'
+"
