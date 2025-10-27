@@ -1,8 +1,8 @@
 ---
-title: "Untitled"
+title: "pa_2"
 author: "Hector"
 date: "2025-10-22"
-output: html_document
+output: github_document
 ---
 
 ```{r}
@@ -10,16 +10,26 @@ library(tidyverse)
 
 dat <- read.csv("./data/data.csv")
 
+dat <- dat |>
+  separate(
+    col = info,
+    into = c("word", "stress_cond"),
+    sep = "_"
+  )
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 
-dat |> 
-  pivot_longer(
-    cols = durationV:int, 
-    names_to = "metric", 
-    values_to = "val"
-  ) |> 
-  ggplot() + 
-  aes(x = metric, y = val) + 
-  facet_wrap(~ metric, scales = "free_y") + 
-  geom_point()
+# Recode stress labels to look nice
+dat <- dat |>
+  mutate(
+    stress_cond = recode(stress_cond,
+                         "stressed" = "Stressed",
+                         "unstressed" = "Unstressed")
+  )
+
+aggregate (durationV~stress_cond, FUN = mean, data = dat)
+aggregate (f0~stress_cond, FUN = mean, data = dat)
+aggregate (int~stress_cond, FUN = mean, data = dat)
 ```
 
